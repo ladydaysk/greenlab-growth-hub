@@ -40,21 +40,21 @@ const HeroSection = () => {
           {/* Right - Form */}
           <div className="bg-green-light rounded-2xl p-6 lg:p-8 shadow-card">
             <h3 className="text-xl font-bold text-foreground mb-6">Solicite sua consultoria gratuita</h3>
-            <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); window.open(WA_LINK, "_blank"); }}>
+            <form action="https://api.sheetmonkey.io/form/4TQDdNMfYV37EixNJUKJoW" method="post" className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
-                <input type="text" placeholder="Seu nome" className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary" />
-                <input type="tel" placeholder="Telefone" className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary" />
+                <input type="text" name="Nome" placeholder="Seu nome" required className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary" />
+                <input type="tel" name="Telefone" placeholder="Telefone" required className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary" />
               </div>
-              <input type="email" placeholder="E-mail" className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary" />
-              <input type="text" placeholder="Nome da clínica / Instagram" className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary" />
-              <select className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary">
+              <input type="email" name="Email" placeholder="E-mail" required className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary" />
+              <input type="text" name="Clinica" placeholder="Nome da clínica / Instagram" className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary" />
+              <select name="Cargo" className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary">
                 <option value="">Qual o seu cargo?</option>
                 <option>Dono</option>
                 <option>Sócio</option>
                 <option>Gerente</option>
                 <option>Secretária</option>
               </select>
-              <select className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary">
+              <select name="Faturamento" className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary">
                 <option value="">Qual seu faturamento médio atual?</option>
                 <option>Até R$ 50.000,00</option>
                 <option>De R$ 50.000,00 a R$ 150.000,00</option>
@@ -62,7 +62,8 @@ const HeroSection = () => {
                 <option>De R$ 350.000,00 a R$ 800.000,00</option>
                 <option>Mais de R$ 800.000,00</option>
               </select>
-              <textarea placeholder="Conte sobre sua clínica e seus principais desafios..." rows={3} className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none" />
+              <textarea name="Desafios" placeholder="Conte sobre sua clínica e seus principais desafios..." rows={3} className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none" />
+              <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
               <button type="submit" className="w-full gradient-primary text-primary-foreground font-bold py-4 rounded-lg text-base hover:scale-[1.02] transition-transform shadow-glow">
                 QUERO UMA CONSULTORIA ESTRATÉGICA
               </button>
