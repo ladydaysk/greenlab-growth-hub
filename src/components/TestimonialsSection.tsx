@@ -1,18 +1,23 @@
+import { Star } from "lucide-react";
+
 const testimonials = [
   {
     name: "Dr. Lucas Mendes",
     clinic: "Clínica Sorriso Perfeito",
     text: "Em apenas 3 meses com a Green, triplicamos o número de consultas agendadas. O treinamento comercial fez toda a diferença na conversão.",
+    rating: 5,
   },
   {
     name: "Dra. Camila Ferreira",
     clinic: "Odonto Prime",
     text: "Saímos de R$ 80 mil para R$ 250 mil de faturamento mensal. A estrutura que a Green implementou é simplesmente incrível.",
+    rating: 5,
   },
   {
     name: "Dr. Rafael Costa",
     clinic: "Instituto Dental Premium",
     text: "A Green não é só marketing, é estratégia de verdade. Hoje temos previsibilidade e escala que nunca imaginamos ser possível.",
+    rating: 5,
   },
 ];
 
@@ -31,20 +36,23 @@ const TestimonialsSection = () => {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="relative rounded-2xl bg-green-dark p-6 lg:p-8 text-green-light shadow-card group hover:shadow-glow transition-shadow duration-300"
+              className="relative rounded-2xl bg-green-dark p-6 lg:p-8 text-green-light shadow-card hover:shadow-glow transition-shadow duration-300"
             >
-              {/* Play button placeholder for video */}
-              <div className="w-full aspect-video rounded-xl bg-green-dark/50 border border-green-neon/20 flex items-center justify-center mb-6 overflow-hidden">
-                <div className="w-16 h-16 rounded-full gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg className="w-6 h-6 text-primary-foreground ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
+              {/* Stars */}
+              <div className="flex gap-1 mb-4">
+                {Array.from({ length: t.rating }).map((_, j) => (
+                  <Star key={j} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                ))}
               </div>
-              <p className="text-green-light/80 text-sm leading-relaxed mb-4">"{t.text}"</p>
-              <div>
-                <p className="font-bold text-green-neon">{t.name}</p>
-                <p className="text-xs text-green-light/50">{t.clinic}</p>
+              <p className="text-green-light/80 text-sm leading-relaxed mb-6">"{t.text}"</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-green-neon/20 flex items-center justify-center text-green-neon font-bold text-sm">
+                  {t.name.charAt(0)}
+                </div>
+                <div>
+                  <p className="font-bold text-green-neon">{t.name}</p>
+                  <p className="text-xs text-green-light/50">{t.clinic}</p>
+                </div>
               </div>
             </div>
           ))}

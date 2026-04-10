@@ -53,18 +53,18 @@ const MethodSection = () => {
               const Icon = step.icon;
               const isLeft = i % 2 === 0;
               return (
-                <div key={i} className={`relative flex items-start gap-6 lg:gap-0 ${isLeft ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
+                <div key={i} className={`relative flex items-start ${isLeft ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
+                  {/* Icon dot */}
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full gradient-primary flex items-center justify-center shadow-glow z-10 lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+                    <Icon className="w-5 h-5 text-primary-foreground" />
+                  </div>
                   {/* Content */}
-                  <div className={`flex-1 lg:w-1/2 ${isLeft ? "lg:pr-12 lg:text-right" : "lg:pl-12"}`}>
-                    <div className={`bg-green-dark/80 border border-green-neon/10 rounded-xl p-6 hover:border-green-neon/30 transition-colors ${isLeft ? "" : ""}`}>
+                  <div className={`flex-1 ml-6 lg:ml-0 lg:w-1/2 ${isLeft ? "lg:pr-12 lg:text-right" : "lg:pl-12"}`}>
+                    <div className="bg-green-dark/80 border border-green-neon/10 rounded-xl p-6 hover:border-green-neon/30 transition-colors">
                       <p className="text-xs font-bold uppercase tracking-widest text-green-neon mb-1">{step.title}</p>
                       <p className="font-bold text-green-light text-lg mb-2">{step.subtitle}</p>
                       <p className="text-sm text-green-light/60 leading-relaxed">{step.desc}</p>
                     </div>
-                  </div>
-                  {/* Icon dot */}
-                  <div className="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 flex-shrink-0 w-12 h-12 rounded-full gradient-primary flex items-center justify-center shadow-glow z-10">
-                    <Icon className="w-5 h-5 text-primary-foreground" />
                   </div>
                   {/* Spacer for opposite side */}
                   <div className="hidden lg:block flex-1 lg:w-1/2" />
