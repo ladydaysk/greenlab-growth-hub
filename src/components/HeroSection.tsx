@@ -1,6 +1,6 @@
 import heroImg from "@/assets/hero-clinic.jpg";
 
-const WA_LINK = "https://wa.me/message/EFNOEQQPLKSRJ1?text=Quero%20alavancar%20os%20resultados%20da%20minha%20clinica%20com%20a%20Green%2C%20como%20funciona%20o%20metodo%20de%20voces%3F";
+const WA_LINK = "https://wa.me/5561990443888?text=Quero%20alavancar%20os%20resultados%20da%20minha%20clinica%20com%20a%20Green%2C%20como%20funciona%20o%20metodo%20de%20voces%3F";
 
 const HeroSection = () => {
   return (
