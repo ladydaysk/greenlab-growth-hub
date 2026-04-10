@@ -15,7 +15,7 @@ const HeroSection = () => {
       <div className="container relative z-10 py-20 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Copy */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-center lg:text-center flex flex-col items-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-green-neon/30 px-4 py-1.5 text-sm text-green-neon">
               <span className="h-2 w-2 rounded-full bg-green-neon animate-pulse" />
               Especialistas em clínicas odontológicas
