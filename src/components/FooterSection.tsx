@@ -1,4 +1,7 @@
-const WA_LINK = "https://wa.me/message/EFNOEQQPLKSRJ1?text=Quero%20alavancar%20os%20resultados%20da%20minha%20clinica%20com%20a%20Green%2C%20como%20funciona%20o%20metodo%20de%20voces%3F";
+import logoIcon from "@/assets/logo-icon.png";
+import logoText from "@/assets/logo-text.png";
+
+const WA_LINK = "https://wa.me/5561990443888?text=Quero%20alavancar%20os%20resultados%20da%20minha%20clinica%20com%20a%20Green%2C%20como%20funciona%20o%20metodo%20de%20voces%3F";
 
 const FooterSection = () => {
   return (
@@ -6,12 +9,8 @@ const FooterSection = () => {
       <div className="container py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-extrabold text-lg">G</span>
-            </div>
-            <span className="text-xl font-extrabold text-green-light">
-              Green<span className="text-green-neon text-base font-semibold">lab</span>
-            </span>
+            <img src={logoIcon} alt="Green Lab" className="w-10 h-10" />
+            <img src={logoText} alt="Green Lab" className="h-7" />
           </div>
 
           <div className="flex items-center gap-6">
