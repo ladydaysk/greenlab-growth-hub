@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="container flex items-center justify-between h-16">
         <div className="flex items-center gap-2">
           <img src={logoIcon} alt="Green Lab" className="w-8 h-8" />
-          <img src={logoText} alt="Green Lab" className="h-6" />
+          <img src={logoText} alt="Green Lab" className="h-10" />
         </div>
         <a
           href={WA_LINK}
