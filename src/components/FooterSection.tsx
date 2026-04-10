@@ -10,7 +10,7 @@ const FooterSection = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <img src={logoIcon} alt="Green Lab" className="w-10 h-10" />
-            <img src={logoText} alt="Green Lab" className="h-7" />
+            <img src={logoText} alt="Green Lab" className="h-12" />
           </div>
 
           <div className="flex items-center gap-6">
