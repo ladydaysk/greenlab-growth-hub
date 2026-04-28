@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logoIcon from "@/assets/logo-icon.png";
+import logoIcon from "@/assets/green-lab-logo.png";
 
 const BG = "#0d2818";
 const NEON = "#00ff88";
@@ -9,19 +9,8 @@ const TEXT_MUTED = "rgba(255,255,255,0.55)";
 const BORDER = "rgba(255,255,255,0.10)";
 
 const Logo = () => (
-  <div className="flex items-center gap-2">
-    <img src={logoIcon} alt="Green Lab" className="h-[26px] w-[26px] object-contain" />
-    <span
-      style={{
-        fontFamily: "'Syne', sans-serif",
-        fontWeight: 700,
-        fontSize: 12,
-        letterSpacing: "0.10em",
-        color: "rgba(255,255,255,0.40)",
-      }}
-    >
-      GREEN LAB
-    </span>
+  <div className="flex items-center">
+    <img src={logoIcon} alt="Green Lab" className="h-10 w-auto object-contain" />
   </div>
 );
 
