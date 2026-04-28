@@ -274,7 +274,45 @@ const Form = () => {
   };
 
   return (
-    <div style={{ background: BG, minHeight: "100vh", color: TEXT }}>
+    <div
+      style={{
+        background: `radial-gradient(circle at 20% 0%, rgba(0,255,136,0.18), transparent 55%), radial-gradient(circle at 80% 100%, rgba(0,255,136,0.14), transparent 50%), linear-gradient(160deg, #06190e 0%, ${BG} 50%, #061a10 100%)`,
+        minHeight: "100vh",
+        color: TEXT,
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          top: "-20%",
+          left: "-10%",
+          width: 500,
+          height: 500,
+          background: NEON,
+          opacity: 0.18,
+          filter: "blur(140px)",
+          borderRadius: "50%",
+          pointerEvents: "none",
+        }}
+      />
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          bottom: "-15%",
+          right: "-10%",
+          width: 480,
+          height: 480,
+          background: NEON,
+          opacity: 0.14,
+          filter: "blur(160px)",
+          borderRadius: "50%",
+          pointerEvents: "none",
+        }}
+      />
       <style>{`
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(20px); }
