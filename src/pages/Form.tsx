@@ -283,24 +283,6 @@ const Form = () => {
     localStorage.setItem("gl_r3", r3);
     localStorage.setItem("gl_r4", r4);
 
-    try {
-      const fd = new FormData();
-      fd.append("Nome", nome);
-      fd.append("Telefone", wpp);
-      fd.append("Clinica", clinica);
-      fd.append("Especialidade", r1);
-      fd.append("Procedimentos", r2);
-      fd.append("Desafio", r3);
-      fd.append("Marketing", r4);
-      fd.append("Created", "x-sheetmonkey-current-date-time");
-      fetch("https://api.sheetmonkey.io/form/4TQDdNMfYV37EixNJUKJoW", {
-        method: "POST",
-        body: fd,
-      }).catch(() => {});
-    } catch {
-      /* noop */
-    }
-
     navigate("/obrigado");
   };
 
