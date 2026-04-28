@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import logoIcon from "@/assets/logo-icon.png";
 
 const BG = "#0d2818";
 const NEON = "#00ff88";
@@ -9,14 +10,7 @@ const BORDER = "rgba(255,255,255,0.10)";
 
 const Logo = () => (
   <div className="flex items-center gap-2">
-    <div
-      className="flex h-[26px] w-[26px] items-center justify-center"
-      style={{ background: NEON, borderRadius: 6 }}
-    >
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-        <path d="M4 12l5 5L20 6" stroke="#06190e" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    </div>
+    <img src={logoIcon} alt="Green Lab" className="h-[26px] w-[26px] object-contain" />
     <span
       style={{
         fontFamily: "'Syne', sans-serif",
@@ -257,6 +251,10 @@ const Form = () => {
   const progress = PROGRESS[step];
 
   const next = () => setStep((s) => s + 1);
+  const back = () => {
+    setErrors({});
+    setStep((s) => Math.max(0, s - 1));
+  };
 
   const validateAndNext = (field: string, value: string) => {
     if (!value) {
@@ -320,6 +318,27 @@ const Form = () => {
         <Logo />
 
         <div className="mt-14 sm:mt-20" key={step}>
+          {step > 0 && (
+            <button
+              type="button"
+              onClick={back}
+              className={`mb-6 inline-flex items-center gap-2 transition-opacity hover:opacity-80 ${fadeUp}`}
+              style={{
+                color: TEXT_MUTED,
+                fontFamily: "'Inter', sans-serif",
+                fontSize: 13,
+                background: "transparent",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+              }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              Voltar
+            </button>
+          )}
           {step === 0 && (
             <div className={`flex flex-col gap-5 ${fadeUp}`}>
               <div
